@@ -1,36 +1,138 @@
-/* Within your javascript file (example: app.js), create separate JS object literals for each shop location that outputs the following to the sales.html file:
-
-Stores the min/max hourly customers, and the average cookies per customer, in object properties
-Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
-Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
-Store the results for each location in a separate array… perhaps as a property of the object representing that location
-Display the values of each array as unordered lists in the browser
-Calculating the sum of these hourly totals; your output for each location should look like this:
-Seattle
-
-6am: 16 cookies
-7am: 20 cookies
-8am: 35 cookies
-9am: 48 cookies
-10am: 56 cookies
-11am: 77 cookies
-12pm: 93 cookies
-1pm: 144 cookies
-2pm: 119 cookies
-3pm: 84 cookies
-4pm: 61 cookies
-5pm: 23 cookies
-6pm: 42 cookies
-7pm: 57 cookies
-Total: 875 cookies */
-
 'use strict';
 
-var hours = ['6am', '7pm'];
+// Store Hours
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am,', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+// Location Objects
+
+// How to output object as an array!
+/* var seattle = {
+    minCust: 23,
+    maxCust: 65,
+    aveSale: 6.3,
+    cust: [],
+    getRanCust: function() {
+        for (var i = 0; i < hours.length; i++) {
+            this.cust.push(randomCust(this.minCust, this.maxCust));
+        }
+
+
+    }
+};
+
+function randomCust(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+seattle.getRanCust();
+console.log(seattle); */
+
+
+
+// How to maybe get cookie per hour formula...
+
+// numberOfCookiesPerHour: function() { this.randomCust * this.aveSale = cookiesPurchasedPerHour
+// }
+
 
 var seattle = {
     minCust: 23,
     maxCust: 65,
     aveSale: 6.3,
+    cust: 0,
+    cookiesPerHour: 0,
+    getRanCust: function() {
+        this.cust = `${randomCust(3, 24)}`;
+        console.log(`${this.cust} is the random number of customers for Seattle`);
 
+
+
+    }
+
+};
+
+function randomCust(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+seattle.getRanCust();
+
+
+var tokyo = {
+    minCust: 3,
+    maxCust: 24,
+    aveSale: 1.2,
+    cust: 0,
+    getRanCust: function() {
+        this.cust = `${randomCust(3, 24)}`;
+        console.log(`${this.cust} is the random number number of customers for Tokyo`);
+
+
+    }
+};
+
+function randomCust(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+tokyo.getRanCust();
+
+
+
+var dubai = {
+    minCust: 11,
+    maxCust: 38,
+    aveSale: 3.7,
+    cust: 0,
+    getRanCust: function() {
+        this.cust = `${randomCust(3, 24)}`;
+        console.log(`${this.cust} is the random number of customers for Dubai`);
+
+
+    }
+};
+
+function randomCust(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+dubai.getRanCust();
+
+var paris = {
+    minCust: 20,
+    maxCust: 38,
+    aveSale: 2.3,
+    cust: 0,
+    getRanCust: function() {
+        this.cust = `${randomCust(3, 24)}`;
+        console.log(`${this.cust} is the random number of customers for Paris`);
+
+
+    }
+};
+
+function randomCust(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+paris.getRanCust();
+
+var lima = {
+    minCust: 2,
+    maxCust: 16,
+    aveSale: 4.6,
+    cust: 0,
+    getRanCust: function() {
+        this.cust = `${randomCust(3, 24)}`;
+        console.log(`${this.cust} is the random number of customers for Lima`);
+
+
+    }
+};
+
+function randomCust(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+lima.getRanCust();
