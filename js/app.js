@@ -30,5 +30,7 @@ var hours = ['6am', '7pm'];
 
 var seattle = {
     minCust: 23,
+    maxCust: 65,
+    aveSale: 6.3,
 
 }
