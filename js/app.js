@@ -2,162 +2,212 @@
 
 // Store Hours
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am,', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var seattleUl = document.getElementById('seattle');
+var tokyoUl = document.getElementById('tokyo');
+var dubaiUl = document.getElementById('dubai');
+var parisUl = document.getElementById('paris');
+var limaUl = document.getElementById('lima');
+
 
 // Location Objects
-
-// How to output object as an array!
-/* var seattle = {
+var seattle = {
     minCust: 23,
     maxCust: 65,
     aveSale: 6.3,
-    cust: [],
+    cust: 0,
+    cookiesPurchasedPerHourArr: [],
+    dailyStoreTotal: 0,
+
     getRanCust: function() {
+        return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    },
+
+    cookiesPurchasedPerHour: function() {
         for (var i = 0; i < hours.length; i++) {
-            this.cust.push(randomCust(this.minCust, this.maxCust));
+            var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
+            this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
+            this.dailyStoreTotal += cookiesPerHour;
         }
+    },
 
-
+    render: function() {
+        this.cookiesPurchasedPerHour();
+        for (var i = 0; i < hours.length; i++) {
+            // Create an element
+            var li = document.createElement('li');
+            // Give it content
+            li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
+            // Append to the DOM
+            seattleUl.appendChild(li);
+        }
+        // Create an element
+        li = document.createElement('li');
+        // Give it content
+        li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
+        // Append to the DOM
+        seattleUl.appendChild(li);
     }
 };
 
-function randomCust(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
+var tokyo = {
+    minCust: 3,
+    maxCust: 24,
+    aveSale: 1.2,
+    cookiesPurchasedPerHourArr: [],
+    dailyStoreTotal: 0,
 
+    getRanCust: function() {
+        return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    },
 
-seattle.getRanCust();
-console.log(seattle); */
+    cookiesPurchasedPerHour: function() {
+        for (var i = 0; i < hours.length; i++) {
+            var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
+            this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
+            this.dailyStoreTotal += cookiesPerHour;
+        }
+    },
 
-
-
-// How to maybe get cookie per hour formula...
-
-// numberOfCookiesPerHour: function() { this.randomCust * this.aveSale = cookiesPurchasedPerHour
-// }
-
-
-var seattle = {
-        minCust: 23,
-        maxCust: 65,
-        aveSale: 6.3,
-        cookiesPurchasedPerHourArr: [],
-        dailyStoreTotal: 0,
-        getRanCust: function() {
-            return Math.floor(Math.random() * this.maxCust - this.minCust + 1)
-        };
-
-
-        /* {
-        this.cust = `${randomCust(23, 65)}`;
-        console.log(`${this.cust} is the random number of customers for Seattle`);
-
-
-
+    render: function() {
+        this.cookiesPurchasedPerHour();
+        for (var i = 0; i < hours.length; i++) {
+            // Create an element
+            var li = document.createElement('li');
+            // Give it content
+            li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
+            // Append to the DOM
+            tokyoUl.appendChild(li);
+        }
+        // Create an element
+        li = document.createElement('li');
+        // Give it content
+        li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
+        // Append to the DOM
+        tokyoUl.appendChild(li);
     }
+};
 
+var dubai = {
+    minCust: 11,
+    maxCust: 38,
+    aveSale: 3.7,
+    cookiesPurchasedPerHourArr: [],
+    dailyStoreTotal: 0,
 
-}
+    getRanCust: function() {
+        return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    },
 
+    cookiesPurchasedPerHour: function() {
+        for (var i = 0; i < hours.length; i++) {
+            var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
+            this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
+            this.dailyStoreTotal += cookiesPerHour;
+        }
+    },
 
-
-function randomCust(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-*/
-
-        var storeOpen = 6;
-        var storeClose = 8;
-        var hoursOpen = storeOpen - storeClose;
-
-        for (var i = 0; i < hoursOpen; i++) {
-            var storeVisits = seattle.getRanCust(23, 65);
-
-            var cookieSales = multiply(storeVisits * seattle.aveSale);
-
-
+    render: function() {
+        this.cookiesPurchasedPerHour();
+        for (var i = 0; i < hours.length; i++) {
+            // Create an element
+            var li = document.createElement('li');
+            // Give it content
+            li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
+            // Append to the DOM
+            dubaiUl.appendChild(li);
         }
 
+        // Create an element
+        li = document.createElement('li');
+        // Give it content
+        li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
+        // Append to the DOM
+        dubaiUl.appendChild(li);
+    }
+};
 
+var paris = {
+    minCust: 20,
+    maxCust: 38,
+    aveSale: 2.3,
+    cookiesPurchasedPerHourArr: [],
+    dailyStoreTotal: 0,
 
-        seattle.getRanCust();
+    getRanCust: function() {
+        return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    },
 
-
-
-
-        var tokyo = {
-            minCust: 3,
-            maxCust: 24,
-            aveSale: 1.2,
-            cust: 0,
-            getRanCust: function() {
-                this.cust = `${randomCust(3, 24)}`;
-                console.log(`${this.cust} is the random number of customers for Tokyo`);
-
-
-            }
-        };
-
-        function randomCust(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
+    cookiesPurchasedPerHour: function() {
+        for (var i = 0; i < hours.length; i++) {
+            var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
+            this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
+            this.dailyStoreTotal += cookiesPerHour;
         }
+    },
 
-        tokyo.getRanCust();
-
-
-
-        var dubai = {
-            minCust: 11,
-            maxCust: 38,
-            aveSale: 3.7,
-            cust: 0,
-            getRanCust: function() {
-                this.cust = `${randomCust(11, 38)}`;
-                console.log(`${this.cust} is the random number of customers for Dubai`);
-
-
-            }
-        };
-
-        function randomCust(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
+    render: function() {
+        this.cookiesPurchasedPerHour();
+        for (var i = 0; i < hours.length; i++) {
+            // Create an element
+            var li = document.createElement('li');
+            // Give it content
+            li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
+            // Append to the DOM
+            parisUl.appendChild(li);
         }
+        // Create an element
+        li = document.createElement('li');
+        // Give it content
+        li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
+        // Append to the DOM
+        parisUl.appendChild(li);
+    }
+};
 
-        dubai.getRanCust();
+var lima = {
+    minCust: 2,
+    maxCust: 16,
+    aveSale: 4.6,
+    cookiesPurchasedPerHourArr: [],
+    dailyStoreTotal: 0,
 
-        var paris = {
-            minCust: 20,
-            maxCust: 38,
-            aveSale: 2.3,
-            cust: 0,
-            getRanCust: function() {
-                this.cust = `${randomCust(20, 38)}`;
-                console.log(`${this.cust} is the random number of customers for Paris`);
+    getRanCust: function() {
+        return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+    },
 
-
-            }
-        };
-
-        function randomCust(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
+    cookiesPurchasedPerHour: function() {
+        for (var i = 0; i < hours.length; i++) {
+            var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
+            this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
+            this.dailyStoreTotal += cookiesPerHour;
         }
-
-        paris.getRanCust();
-
-        var lima = {
-            minCust: 2,
-            maxCust: 16,
-            aveSale: 4.6,
-            cust: 0,
-            getRanCust: function() {
-                this.cust = `${randomCust(2, 16)}`;
-                console.log(`${this.cust} is the random number of customers for Lima`);
+    },
 
 
-            }
-        };
 
-        function randomCust(min, max) {
-            return Math.floor(Math.random() * (max - min + 1) + min);
+    render: function() {
+        this.cookiesPurchasedPerHour();
+        for (var i = 0; i < hours.length; i++) {
+            // Create an element
+            var li = document.createElement('li');
+            // Give it content
+            li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
+            // Append to the DOM
+            limaUl.appendChild(li);
         }
+        // Create an element
+        li = document.createElement('li');
+        // Give it content
+        li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
+        // Append to the DOM
+        limaUl.appendChild(li);
+    }
+};
 
-        lima.getRanCust();
+
+seattle.render();
+tokyo.render();
+dubai.render();
+paris.render();
+lima.render();
+
