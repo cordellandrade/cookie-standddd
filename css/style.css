@@ -23,3 +23,13 @@ ul {
 li {
     font-family: Georgia;
 }
+
+table {
+    border: 1px solid black;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 15px;
+}
