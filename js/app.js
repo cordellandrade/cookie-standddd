@@ -27,12 +27,8 @@ var seattle = {
             var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
             this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
             this.dailyStoreTotal += cookiesPerHour;
-
         }
-
     },
-
-
 
     render: function() {
         this.cookiesPurchasedPerHour();
@@ -43,24 +39,15 @@ var seattle = {
             li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
             // Append to the DOM
             seattleUl.appendChild(li);
-
         }
-
         // Create an element
         li = document.createElement('li');
         // Give it content
         li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
         // Append to the DOM
         seattleUl.appendChild(li);
-
-
     }
-
 };
-
-
-
-seattle.render();
 
 var tokyo = {
     minCust: 3,
@@ -78,12 +65,8 @@ var tokyo = {
             var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
             this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
             this.dailyStoreTotal += cookiesPerHour;
-
         }
-
     },
-
-
 
     render: function() {
         this.cookiesPurchasedPerHour();
@@ -94,24 +77,15 @@ var tokyo = {
             li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
             // Append to the DOM
             tokyoUl.appendChild(li);
-
         }
-
         // Create an element
         li = document.createElement('li');
         // Give it content
         li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
         // Append to the DOM
         tokyoUl.appendChild(li);
-
-
     }
-
 };
-
-
-
-tokyo.render();
 
 var dubai = {
     minCust: 11,
@@ -129,12 +103,8 @@ var dubai = {
             var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
             this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
             this.dailyStoreTotal += cookiesPerHour;
-
         }
-
     },
-
-
 
     render: function() {
         this.cookiesPurchasedPerHour();
@@ -145,7 +115,6 @@ var dubai = {
             li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
             // Append to the DOM
             dubaiUl.appendChild(li);
-
         }
 
         // Create an element
@@ -154,15 +123,8 @@ var dubai = {
         li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
         // Append to the DOM
         dubaiUl.appendChild(li);
-
-
     }
-
 };
-
-
-
-dubai.render();
 
 var paris = {
     minCust: 20,
@@ -180,12 +142,8 @@ var paris = {
             var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
             this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
             this.dailyStoreTotal += cookiesPerHour;
-
         }
-
     },
-
-
 
     render: function() {
         this.cookiesPurchasedPerHour();
@@ -196,24 +154,15 @@ var paris = {
             li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
             // Append to the DOM
             parisUl.appendChild(li);
-
         }
-
         // Create an element
         li = document.createElement('li');
         // Give it content
         li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
         // Append to the DOM
         parisUl.appendChild(li);
-
-
     }
-
 };
-
-
-
-paris.render();
 
 var lima = {
     minCust: 2,
@@ -231,9 +180,7 @@ var lima = {
             var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
             this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
             this.dailyStoreTotal += cookiesPerHour;
-
         }
-
     },
 
 
@@ -247,21 +194,19 @@ var lima = {
             li.textContent = `${hours[i]}: ${this.cookiesPurchasedPerHourArr[i]} cookies`;
             // Append to the DOM
             limaUl.appendChild(li);
-
         }
-
         // Create an element
         li = document.createElement('li');
         // Give it content
         li.textContent = `Total: ${this.dailyStoreTotal} cookies`;
         // Append to the DOM
         limaUl.appendChild(li);
-
-
     }
-
 };
 
 
-
+seattle.render();
+tokyo.render();
+dubai.render();
+paris.render();
 lima.render();
