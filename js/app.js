@@ -46,6 +46,10 @@ function Store(name, minCust, maxCust, aveSale) {
         cookieTable.appendChild(tr);
     }
 
+
+}
+
+function renderHeader() {
     var tr = document.createElement('tr');
     var th = document.createElement('th');
     tr.appendChild(th);
@@ -81,7 +85,7 @@ var dubai = new Store('Dubai', 11, 38, 3.7);
 var paris = new Store('Paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
 
-
+renderHeader();
 seattle.render();
 tokyo.render();
 dubai.render();
