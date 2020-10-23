@@ -6,6 +6,7 @@ var cookieTable = document.getElementById('cookie-table');
 
 
 
+
 // Location Objects
 
 function Store(name, minCust, maxCust, aveSale) {
@@ -33,11 +34,8 @@ function Store(name, minCust, maxCust, aveSale) {
         tr.appendChild(td);
 
         for (var i = 0; i < hours.length; i++) {
-            // Create an element
             var td = document.createElement('td');
-            // Give it content
             td.textContent = this.cookiesPurchasedPerHourArr[i];
-            // Append to the DOM
             tr.appendChild(td);
         }
         var td = document.createElement('td');
@@ -67,23 +65,13 @@ function renderHeader() {
     cookieTable.appendChild(tr);
 }
 
-// function totalCookiesPerHour() {
-//     var tr = document.createElement('tr');
-//     var th = document.createElement('th');
-//     th.textContent = 'Hourly Total';
-//     tr.appendChild(th);
-
-//     dailyStoreTotal = 0;
-
-//   
-
-// }
 
 var seattle = new Store('Seattle', 23, 65, 6.3);
 var tokyo = new Store('Tokyo', 3, 24, 1.2);
 var dubai = new Store('Dubai', 11, 38, 3.7);
 var paris = new Store('Paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
+
 
 renderHeader();
 seattle.render();
