@@ -5,11 +5,13 @@ body {
 h1 {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: violet;
 }
 
 p {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
+    color: violet;
 }
 
 #locations {
@@ -27,6 +29,7 @@ ul {
 
 li {
     font-family: Georgia;
+    color: violet;
 }
 
 td {
@@ -38,7 +41,10 @@ td {
     background-color: white;
 }
 
-th {}
+main {
+    color: brown;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 td:hover {
     background-color: red;
