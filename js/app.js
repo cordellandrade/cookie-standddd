@@ -3,6 +3,9 @@
 // Store Hours
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 var cookieTable = document.getElementById('cookie-table');
+var storeForm = document.getElementById('storeForm');
+
+
 
 
 
@@ -24,6 +27,7 @@ function Store(name, minCust, maxCust, aveSale) {
             var cookiesPerHour = Math.ceil(this.getRanCust() * this.aveSale);
             this.cookiesPurchasedPerHourArr.push(cookiesPerHour);
             this.dailyStoreTotal += cookiesPerHour;
+
         }
     }
     this.render = function() {
@@ -49,7 +53,10 @@ function Store(name, minCust, maxCust, aveSale) {
 
 function renderHeader() {
     var tr = document.createElement('tr');
+    cookieTable.appendChild(tr);
+
     var th = document.createElement('th');
+    th.textContent = '';
     tr.appendChild(th);
 
     for (var i = 0; i < hours.length; i++) {
@@ -61,9 +68,47 @@ function renderHeader() {
     th = document.createElement('th');
     th.textContent = 'Total';
     tr.appendChild(th);
-
-    cookieTable.appendChild(tr);
 }
+
+function renderFooter() {
+
+    var tfoot = document.createElement('tfoot');
+    var td = document.createElement('td');
+    td.textContent = 'Grand Total:';
+    tfoot.appendChild(td);
+
+    cookieTable.appendChild(tfoot);
+
+    var grandTotal = 0;
+    var storeArray = [];
+    var hourlyCounter = 0;
+
+    for (var i = 0; i < hours.length; i++) {
+        for (var j = 0; j < storeArray.length; j++) {
+            hourlyCounter += storeArray[j].cookiesPurchasedPerHourArr[i];
+
+        }
+
+        td = document.createElement('td');
+        td.textContent = hourlyCounter;
+        tfoot.appendChild(td);
+        // grandTotal = hourlyCounter += grandTotal;
+
+    }
+    td = document.createElement('td');
+    td.textContent = grandTotal;
+    tfoot.appendChild(td)
+    cookieTable.appendChild(tfoot);
+
+
+
+
+}
+
+// storeForm.addEventListener('click', handleClick);
+
+
+
 
 
 var seattle = new Store('Seattle', 23, 65, 6.3);
@@ -74,6 +119,8 @@ var lima = new Store('Lima', 2, 16, 4.6);
 
 
 renderHeader();
+renderFooter();
+
 seattle.render();
 tokyo.render();
 dubai.render();
