@@ -2,7 +2,7 @@ body {
     background-color: teal;
 }
 
-.family {
+#family-one {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -10,12 +10,21 @@ body {
     padding-top: 20px;
 }
 
+#family-two {
+    /* display: block; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* padding-bottom: 20px;
+    padding-top: 20px; */
+    float: right;
+}
+
 #family {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 #fish {
