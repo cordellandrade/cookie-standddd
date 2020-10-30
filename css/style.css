@@ -4,20 +4,28 @@ body {
 
 #family-one {
     display: block;
+    margin-left: -5px;
+    margin-right: auto;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    display: inline;
+    width: fit-content;
+}
+
+#pic-div {
+    text-align: center;
+}
+
+
+/* #family-two {
+    display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 20px;
     padding-top: 20px;
-}
-
-#family-two {
-    /* display: block; */
-    /* margin-left: auto;
-    margin-right: auto; */
-    /* padding-bottom: 20px;
-    padding-top: 20px; */
-    float: right;
-}
+    display: inline;
+    text-align: center;
+} */
 
 #family {
     display: block;
